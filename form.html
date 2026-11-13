@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Назва сторінки</title>
+    
+    <!-- ОСЬ ЦІ ДВА РЯДКИ ПОТРІБНО ДОДАТИ: -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1 class="logo">Шкільна інформатика</h1>
+        <nav>
+    <ul class="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="info.html">About</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="form.html">Contacts</a></li>
+	<li><a href="gallery.html">Gallery</a></li>
+    </ul>
+</nav>
+    </header>
+
+    <main>
+        <h2>Контакти та зворотний зв'язок</h2>
+        <p>Заповніть форму нижче, щоб надіслати нам повідомлення:</p>
+
+        
+        <form action="#" method="POST" id="feedback" style="margin-top: 20px;">
+            <p style="margin-bottom: 15px;">
+                <label for="name">Ваше ім'я:</label><br>
+                <input type="text" id="name" name="name" required style="width: 100%; padding: 8px; margin-top: 5px; border: 1px solid #ccc; border-radius: 4px;">
+            </p>
+            <p style="margin-bottom: 15px;">
+                <label for="email">Електронна пошта:</label><br>
+                <input type="email" id="email" name="email" required style="width: 100%; padding: 8px; margin-top: 5px; border: 1px solid #ccc; border-radius: 4px;">
+            </p>
+            <p style="margin-bottom: 15px;">
+                <label for="message">Повідомлення:</label><br>
+                <textarea id="message" name="message" rows="4" required style="width: 100%; padding: 8px; margin-top: 5px; border: 1px solid #ccc; border-radius: 4px;"></textarea>
+            </p>
+            <p>
+               <p><button type="submit" style="...">Надіслати</button></p>
+        </form>
+<p id="result"></p>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Шкільна інформатика. Автор: Валентина Ковальська</p>
+    </footer>
+<script>
+    const form = document.getElementById("feedback");
+    form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        const name = form.elements["name"].value;
+        document.getElementById("result").textContent = "Дякуємо, " + name + "! Ваш коментар отримано.";
+        form.reset();
+    });
+    </script>
+</body>
+</html>
